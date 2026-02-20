@@ -18,5 +18,7 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
-          script: |
+           script: |
+            cd /home/ubuntu
+            git clone https://github.com/SokhadomKhorn/Assignment1.git || (cd Assignment1 && git pull)
             sudo cp -r /home/ubuntu/Assignment1/* /var/www/html/
